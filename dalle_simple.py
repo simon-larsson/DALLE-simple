@@ -73,7 +73,7 @@ class DalleMini:
         self.clip_processor = CLIPProcessor.from_pretrained(clip_version, revision=clip_commit_id)
         self.clip_params = replicate(clip_params)
 
-        # create jax vectorized functions with initialized models
+        # create vectorized jax functions with initialized models
         self._p_generate = create_p_generate(self.dalle)
         self._p_decode = create_p_decode(self.vqgan)
 
